@@ -1,1 +1,2 @@
-if(location.href.match(/^http:/i)) href.location = href.location.replace(/^http:/i, 'https:')
+if (location.href.match(/^http:/i))
+  location.href = location.href.replace(/^http:/i, 'https:');
