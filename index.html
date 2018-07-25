@@ -4,13 +4,57 @@
 <head>
   <script src="https://https.netlify.com/redirect.js"></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>https.netlify.com</title>
+  <title>Redirect HTTP to HTTPS only if the browser supports Let's Encrypt SSL/TLS certificates</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=pgqGzjmxgw">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=pgqGzjmxgw">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=pgqGzjmxgw">
+  <link rel="manifest" href="/site.webmanifest?v=pgqGzjmxgw">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=pgqGzjmxgw" color="#00bb00">
+  <link rel="shortcut icon" href="/favicon.ico?v=pgqGzjmxgw">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-  https.netlify.com
+  <div class="container">
+    <h1>Redirect HTTP to HTTPS only if the browser supports Let's Encrypt SSL/TLS certificates</h1>
+    <hr>
+    <b>Why use this script?</b>
+    <p>
+      <ul>
+        <li>If you are required to serve non-secure content to browsers that do not support the
+          <a href="https://letsencrypt.org/">free SSL/TLS certificates from Let's Encrypt
+          </a>.
+        </li>
+        <li>If you want to redirect all browsers that do support TLS certs from Let's Encrypt to secure HTTPS URLs and avoid
+          any ugly and/or scary browser notifications about the page being unsecure.</li>
+      </ul>
+    </p>
+    <b>How to use this script?</b>
+    <p>
+      Copy and paste the following script tag code as the first item into the
+      <code>&lt;head&gt;</code> of every webpage you want to redirect to HTTPS from HTTP (if the browser supports it):
+      <div class="card">
+        <div class="card-body">
+          <code>
+            &lt;script src="https://https.netlify.com/redirect.js"&gt;&lt;/script&gt;
+          </code>
+        </div>
+      </div>
+    </p>
+    <b>How does this script work?</b>
+    <p>
+      The redirection script itself is hosted on
+      <a href="https://www.netlify.com/">Netlify</a> with HTTPS enforced using a Let's Encrypt certificate. Therefore, when the script is requested by the browser,
+      from your page(s), it will only load and execute the redirect to HTTPS if the browser in fact supports the HTTPS certificate.
+      Otherwise, the browser will refuse the connection, not load the script and not perform a redirect; keeping the user
+      on the non-secured HTTP URL.
+    </p>
+  </div>
 </body>
 
 </html>
